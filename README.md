@@ -1,2 +1,2 @@
-#url : http://sakurajima.pythonanywhere.com/
+*url : http://sakurajima.pythonanywhere.com/
 
