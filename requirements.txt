@@ -1,0 +1,4 @@
+django
+django-environ
+pillow
+django-tailwind==2.2.0

@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %} Delete Boss {% endblock title %}
+
+{% block content %}
+
+{% include 'components/dashboard.html' %}
+
+<main class="flex-1 relative overflow-y-auto focus:outline-none">
+    <div class="py-6">
+
+      <!-- This example requires Tailwind CSS v2.0+ -->
+      <div class=" px-4 py-5 sm:px-6">
+        <div class="-ml-4 -mt-2 flex items-center justify-between flex-wrap sm:flex-nowrap">
+          <div class="ml-4 mt-2">
+            <h3 class="text-lg leading-6 font-medium text-gray-900">
+              Delete Boss
+            </h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
+        <!-- This example requires Tailwind CSS v2.0+ -->
+        <div class="flex flex-col">
+          <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+            <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+              <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg py-8">
+                
+                <form method="POST">
+                  {% csrf_token %}
+                  <p class="ml-2 mt-2 text-gray-800">Are you sure to delete the boss?</p>
+                  <button type="submit" class="ml-2 mt-2 px-3 py-2 bg-red-500 hover:bg-red-300 rounded-lg text-white">Delete</button>
+                </form>
+
+              </div>
+      </div>
+    </div>
+  </main>
+
+</div>
+</div>
+
+{% endblock content%}

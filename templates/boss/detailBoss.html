@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% load humanize %}
+
+{% block title %} Detail Boss {% endblock title %}
+
+{% block content %}
+    
+    {% include 'components/dashboard.html' %}
+
+      <main class="flex-1 relative overflow-y-auto focus:outline-none">
+        <div class="py-6">
+  
+          <div class=" px-4 py-5 sm:px-6">
+            <div class="-ml-4 -mt-2 flex items-center justify-between flex-wrap sm:flex-nowrap">
+              <div class="ml-4 mt-2 flex-shrink-0">
+                <a href="{% url 'boss:update' boss.id %}" class="relative inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-green-500 hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">
+                  Edit
+                </a>
+                <a href="{% url 'boss:delete' boss.id %}" class="relative inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-red-500 hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">
+                  Delete
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex flex-col">
+            <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-6">
+              <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+                <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
+                  
+                  <h1>
+                    <span class="block text-base text-center text-indigo-600 font-semibold tracking-wide uppercase">
+                    Information</span>
+                    <span class="mt-2 block text-3xl text-center leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                    {{ boss.first_name }} {{ boss.last_name }}</span>
+                  </h1>
+  
+                  <div class="mt-6 prose prose-indigo prose-lg text-gray-500 mx-10">
+                    <p>Email :  {{boss.email}}</p>
+                    <p>Salary : ${{boss.salary|intcomma}}</p>
+                    <p>Phone :  {{boss.phone}}</p>
+                    <p>DNI :  {{boss.dni}}</p>
+                    <p>Work Area Boss :  {{boss.boss_area}}</p>
+                    <p>Created :  {{boss.created}}</p>
+                  </div>
+  
+                </div>
+              </div>
+            </div>
+        </div>
+
+      </main>
+  
+    </div>
+  
+  </div>
+
+{% endblock content %}

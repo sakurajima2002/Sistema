@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load  static %}
+
+{% block title %} Login {% endblock title %}
+
+{% block navbar %} 
+{% include 'components/navbar.html' %}
+{% endblock navbar %}
+
+{% block content %}
+
+<div class="">
+
+<div class="mx-auto mt-20 w-full max-w-lg rounded-lg border  shadow-2xl">
+    <div class="flex justify-center px-2 pt-4 mt-2  text-sm font-medium dark:text-dark-txt text-gray-700">
+        <form method="POST" id="form" class="bg-white px-8 pt-6 pb-8">
+            <h3 class="text-lg font-medium text-center dark:text-dark-txt text-gray-700">Get Into</h3>
+            
+            {% if messages %}
+                {% for message in messages %}
+                    <p class="text-red-500 mx-2 text-center">{{message}}*</p>
+                {% endfor %}
+            {% endif %}
+
+            {% csrf_token %}
+            {{ form.as_p}}
+        
+    </div>
+    <div class="flex justify-center mb-10">
+        <button type="submit" class="px-3 py-2 mr-2 bg-green-500 hover:bg-green-600 rounded-lg text-white">Login</button>
+        <a href="{% url 'home' %}" class="px-3 py-2.5 bg-yellow-500 rounded-lg text-white">Return</a>
+    </div>
+    </form>
+</div>
+</div>
+</div>
+
+{% endblock content %}

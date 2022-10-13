@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Create Employee {% endblock title %}
+
+{% block content %}
+    
+    {% include 'components/dashboard.html' %}
+
+    <main class="flex-1 relative overflow-y-auto focus:outline-none">
+
+    <div class="flex flex-col">
+        <div class="-my-2 overflow-x-auto  sm:-mx-6 lg:-mx-8">
+            <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+                <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
+                    <h3 class="mt-2 text-lg font-medium text-center dark:text-dark-txt text-gray-700">Create Employee</h3>
+                    <form method="POST" class="text-center" enctype='multipart/form-data'>
+                        {% csrf_token %}
+                        <label class="block text-sm font-medium dark:text-dark-txt text-gray-700">
+                            First Name
+                        </label>
+                        {{form.first_name}}
+                    
+                        <label class="block text-sm font-medium dark:text-dark-txt text-gray-700">
+                            Last Name
+                        </label>
+                        {{form.last_name}}
+                    
+                        <label class="block text-sm font-medium dark:text-dark-txt text-gray-700">
+                            Email
+                        </label>
+                        {{form.email}}
+                    
+                        <label class="block text-sm font-medium dark:text-dark-txt text-gray-700">
+                            Salary
+                        </label>
+                        {{form.salary}}
+                    
+                        <label class="block text-sm font-medium dark:text-dark-txt text-gray-700">
+                            Phone
+                        </label>
+                        {{form.phone}}
+                    
+                        <label class="block text-sm font-medium dark:text-dark-txt text-gray-700">
+                            DNI
+                        </label>
+                        {{form.dni}}
+                    
+                        <label class="block text-sm font-medium dark:text-dark-txt text-gray-700">
+                            Employee Area
+                        </label>
+                        {{form.employee_area}}
+                    
+                        <div class="mt-5 mb-5">
+                            <button type="submit" class="px-3 py-2 bg-green-500 rounded-lg text-white">Create</button>
+                            <button type="reset" class="px-3 py-2 bg-blue-500 rounded-lg text-white">Reset</button>
+                            <a href="{% url 'employee:employees' %}" class="px-3 py-2.5 bg-yellow-500 rounded-lg text-white">Return</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</main>
+</div>
+</div>
+
+
+{% endblock content %}
